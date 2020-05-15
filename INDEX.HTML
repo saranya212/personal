@@ -1,9 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="scroll-behavior:smooth">
 <head>
-  
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Document</title>
+
+    <style>
+    footer {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     
+     background-color:grey;
+     color: white;
+     font-size: large;
+     text-align: center;
+      }
+     
+    </style>
+
+
+
+
 </head>
 <body>  
 <header class="bg-secondary" style="z-index: 1;position: fixed; width: 100%;">
@@ -20,13 +38,17 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               
+              <a class="nav-link text-white" href="#homesec">Home</a>
+            </li>
+            <li class="nav-item">
+              
               <a class="nav-link text-white" name="exp" href="#expi">Experience</a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-white" href="#fami">Family</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" href="#">Contact Me</a>
+              <a class="nav-link text-white" href="#cont">comeToME</a>
             </li>
           </ul>
         </div>
@@ -36,11 +58,11 @@
 </header>   
 
 
-<section class=" p-5 bg-info">
+<section class=" p-5 bg-info" id="homesec">
   <div class="container">
-  <div class="row align-items-center ">
-<div class="col-md-6 pt-4 ">
-  <img src="images/‪+91 99617 36224‬ 20150715_125422.jpg" class="img-fluid rounded-circle pl-3">
+  <div class="row align-items-center pt-4 ">
+<div class="col-md-6 pt-4" >
+  <img src="images/etn.jpg" class="img-fluid rounded-circle">
 </div>
 <div class="col-md-6 text-white ">
   <h5><strong>
@@ -54,7 +76,7 @@
 </div>
 </section>
 
-<section class=" bg-info pt-4"id="expi" style="height: 1800px;">
+<section class=" bg-info pt-4"id="expi" style="height: 1650px;">
   <div class="container pt-4 m-3" >
       
        <h1 class="pr-5 text-center " >Experience</h1>
@@ -99,7 +121,7 @@
        </div>
   </div>
 </section> 
-<section style="height: 0px;" class="bg-light">
+<section style="height: 0px;" class="bg-primary">
   <div class="container">
     <div class="r0w"></div>
   </div>
@@ -107,20 +129,20 @@
 
 
 
-<section class="bg-info pt-4" style="height: 1700px;">
-    <div class="container pt-4 m-3">
-                   <h1 class="text-center pr-5 " id="fami">Family</h1>
+<section class=" bg-danger pt-4"id="fami" style="height: 1650px;">
+  <div class="container pt-4 m-3" >
+    <h1 class="pr-5 text-center " >Family</h1>
        <div class="row">  
            <div  class="col-md-4">
-             <div class="ml-5" >
-               <div class="card">
+             <div class="ml-5 pt-5" >
+               <div class="card ">
                  <img class="card-img-top" src="images/newsiv.jpg"  alt="Card image">
              
                </div>
              </div>
             </div>
-             <div  class="col-md-4">
-                <div class="ml-5">
+             <div  class="col-md-4 pt-4">
+                <div class="ml-5 pt-5">
                    <div class="card">
                        <img class="card-img-top"  src="images/img2.jpg" alt="Card image">
                    
@@ -129,7 +151,7 @@
                </div>
              
                 <div  class="col-md-4">
-                  <div class="ml-5">
+                  <div class="ml-5 pt-5">
                      <div class="card" >
                           <img class="card-img-top" src="images/siva1.jpg" alt="Card image" >
                       
@@ -139,15 +161,51 @@
      </div>
 
     </div>
-
+  </div>
+</div>
+ </section>
+ <section  style="background-color:#003752 !important; height: 600PX; padding-top: 37px;" id="cont">
+<div class="row text-white">
+  <div class="col-md-4"></div>
+  <div class="col-md-4"></div>
+  <div class="col-md-4">
+    <h3 class="block-title">Contact me</h3>
+    <p>Pillakkad(h)<br>
+    Munhakkulam<br>
+  Koottilangadi,Malappuram(Dst)</p>
+  <p>Ph:9961736224</p>
+  <p>Email jithipd@gmail.com<br>
+  jithin.pillakkad@stfc.com.in</p>
+</section>
+  <footer>
+  <div class="container">
+<div class="row">
+  <div class="col-md-12 text-center">
+    <p>Copyrights</p>
+  <div class="row">
+    <div class="col-md-2 ">
+    <a href="https://www.facebook.com"><i class="fa fa-facebook" style="background-color: linen;" ></i></a></div>
+    <div class="col-md-2 pl-3 ">
+    <i class="fa fa-youtube" style="background-color: red;"></i></div>
+    <div class="col-md-2 pl-3">
+    <i class="fa fa-twitter" style="background-color: royalblue;"></i></div>
+    <div class="col-md-2 pl-3">
+    <i class="fa fa-google-plus"  style="background-color: green;"></i></div>
+  
+    </div>
+  </div>
+  </div>
+  </footer>
+</div>
+</div>
  
-  </section>
+ 
 
 <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous"></script>
     <link hrfe="indximg.css" rel="stylesheet" type="text/css">   
   </body>
 

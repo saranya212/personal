@@ -1,8 +1,10 @@
 img{
     height: 355px;
     width: 222px;
+    padding-top: 30px;
 }
 .card{
     width: 400px;
     height: 300px;
+    padding-top: 10px;
 }
