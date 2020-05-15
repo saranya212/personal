@@ -1,0 +1,89 @@
+function auto_suggestions(element,prefix){
+  $(element).autocomplete({
+    source: function(request, response) {
+      $.ajax({
+        url: '/ti_forms/components/locator_suggestion_json.html',
+        data: {
+          'city_initials': request.term
+        },
+        dataType: 'json',
+        success: function (data) {
+          d =  JSON.parse(data)
+          if(d.length == 0) {
+            alert("Please select city from suggestions list only!");
+            $('#'+prefix+'_autocomplete_city_dd').val('')
+          }
+          var re = new RegExp('^' + request.term , "i");
+          source_arr = []
+          response( $.map( d, function( object ) {
+            city_id = object.city_id
+            city = object.city;
+            state = object.state;
+            country_name = object.country_name;
+            country_code = object.country_code;
+            isd_code = object.isd_code;
+            im_contact = object.im_contact;
+            city_synonym = object.city_synonym;
+            if(re.test(city)) {
+                lbl = city + ', ' + state + ', ' + country_name;
+                val = city + ', ' + state + ', ' + country_name;
+            } else {
+                lbl = city_synonym + ', ' + state + ', ' + country_name;
+                val = city_synonym + ', ' + state + ', ' + country_name;
+            }
+            var result = {
+                label: lbl,
+                value: val,
+                city_id: city_id,
+                city: city,
+                state: state,
+                country_code: country_code,
+                isd_code: isd_code,
+                im_contact: im_contact
+              };
+              return result;
+
+
+            }));
+        },
+        error: function() {
+          alert('An error occurred');
+      }
+      });
+    },
+    minLength: 3,
+    select: function(event, ui) {
+       var selectedObj = ui.item;
+       fill_location_data(selectedObj,prefix);
+    },
+    change: function( event, ui ) {
+      if ( !ui.item ) {
+        clear_location_data(prefix);
+      }
+    },
+    open: function( event, ui ) {
+        clear_location_data(prefix);
+    },
+    close: function( event, ui ) {
+      if($('#'+prefix+'_country').val().length==0 || $('#'+prefix+'_state').val().length==0 || $('#'+prefix+'_city').val().length==0 || $('#'+prefix+'_city_id').val().length==0) {
+          clear_location_data(prefix);
+      }
+    }
+
+  });
+}
+
+function fill_location_data(object,prefix){
+  $('#'+prefix+'_city').val(object.city);
+  $('#'+prefix+'_state').val(object.state);
+  $('#'+prefix+'_country').val(object.country_code);
+  $('#'+prefix+'_city_id').val(object.city_id);
+}
+
+function clear_location_data(prefix){
+  $('#'+prefix+'_city').val('');
+  $('#'+prefix+'_state').val('');
+  $('#'+prefix+'_country').val('');
+  $('#'+prefix+'_city_id').val('');
+}
+

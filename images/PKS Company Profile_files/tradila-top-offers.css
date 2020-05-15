@@ -1,0 +1,237 @@
+/* Tradila Product Showcase Section New CSS Starts here */
+.tradila-showcase-main {
+    margin: 0 0 20px 0;
+    box-shadow: 0px 0px 6px #999;
+    padding:20px;
+}
+
+.tradila-showcase-main .product-showcase {
+    padding: 0 55px;
+}
+
+.tradila-showcase-main .product-showcase h3 {
+    text-transform: uppercase;
+    font-size: 24px;
+    font-size: 1.5rem;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing {
+    padding: 1.875rem 0.625rem;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product {
+    float: left;
+    width: 20%;
+    text-align: center;
+    padding: 0  0 15px 0;
+    transition: all ease 0.5s;
+    margin: 10px 0;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product:hover{
+    box-shadow: 0px 0px 5px #a0a0a0;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .img-section {
+    display: flex;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin: 20px 0 0;
+    align-items: center;
+    justify-content: center;
+    max-height: 175px;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .img-section img {
+    display: inline-block;
+    height: 130px;
+    margin: 0 auto;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .latest-price {
+    text-align: center;
+    display: block;
+    width: 100%;
+    margin: 0;
+    transition: all ease 0.5s;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .latest-price a {
+    display: inline-block;
+    background: #c52828;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    padding: 10px 24px 8px 24px;
+    transition: all ease 0.5s;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .latest-price a:hover {
+    opacity: 0.8;
+    transition: all ease 0.5s;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .latest-price span {
+    display: inline-block;
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #e21a22;
+    padding: 10px;
+    width: 172px;
+    text-align: center;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .content-section {
+    display: block;
+    width: 100%;
+    position: relative;
+    margin: 20px 0;
+    transition: all ease 0.5s;
+    padding: 0 5px;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .content-section .price-section {
+    display: block;
+    width: 100%;
+    margin: 6px 0 0 0;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .content-section .price-section span {
+    font-size: 15px;
+    color: #2ca025;
+    font-weight: 700;
+    text-align: center;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .content-section .price-section span i {
+    display: inline-block;
+    margin: 0 0 0 5px;
+    font-style: normal;
+    color: #666;
+    font-weight: normal;
+    text-decoration: line-through;
+    font-size: 12px;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .content-section .price-section span a {
+    color: #e21a22;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .content-section .price-section span:hover a {
+    color: #0f6ac2;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product label {
+    display: block;
+    width: 100%;
+    text-align: left;
+    font-size: 15px;
+    margin: 5px 20px 0 0;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .brand-name{
+    color:#000;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product label a{
+    color:#000;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product span {
+    font-size: 14px;
+    color: #666;
+    text-align: left;
+    width: 100%;
+    display: block;
+    margin: 7px 0 0 0;
+    text-align: center;
+}
+
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .inquiry-btn {
+    transition: all ease 0.5s;
+    font-size: 16px;
+    background: #c52828;
+    color: #fff;
+    border: none;
+}
+
+.tradila-showcase-main .product-showcase .showcase-listing .product .inquiry-btn:hover{
+    opacity: 0.9;
+}
+
+.tradila-showcase-main .product-showcase .tradila-prod-showcase-container {
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    list-style: none;
+    z-index: 1;
+    padding: 0 10px;
+}
+
+.tradila-showcase-main .product-showcase .swiper-button-prev {
+    background: url(../../docroot/images/showcase-left-arrow.png) no-repeat;
+    height: 80px;
+    width: 43px;
+    left: 10px;
+    outline: none;
+}
+
+.tradila-showcase-main .product-showcase .swiper-button-next {
+    background: url(../../docroot/images/showcase-right-arrow.png) no-repeat;
+    height: 80px;
+    width: 43px;
+    right: -8px;
+    outline: none;
+}
+
+.tradila-showcase-main .left-arrow {
+    position: absolute;
+    left: -35px;
+    top: 50%;
+}
+
+.tradila-showcase-main .right-arrow {
+    position: absolute;
+    right: -35px;
+    top: 50%;
+}
+
+.tradila-heading{
+    font-size: 20px;
+    font-weight: bold;
+    color: #666666;
+}
+
+.tradila-heading a{
+    color:#1070c4;
+    font-weight: 500;
+    font-size: 16px;
+    margin-left: 20px;
+}
+
+.tradila-showcase-main .discount{
+    background: #d83c3c;
+    color:#fff;
+    padding: 6px 4px;
+    border-radius: 3px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1
+}
+
+
+/* Tradila Product Showcase Section New CSS Ends here */

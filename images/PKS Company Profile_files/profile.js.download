@@ -1,0 +1,109 @@
+// product showcase
+var swiper = new Swiper('.swiper-container-showcase', {
+    spaceBetween: 40,
+    slidesPerView: 3,
+    freeMode: true,
+    autoplay: {
+        delay: 3000,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        // when window width is <= 320px
+
+        // when window width is <= 480px
+        480: {
+            slidesPerView: 1,
+            spaceBetween: 35
+        },
+        // when window width is <= 640px
+        640: {
+            slidesPerView: 1,
+            spaceBetween: 35
+        },
+        // when window width is <= 768px
+        768: {
+            slidesPerView: 2,
+            spaceBetween: 35
+        }
+    }
+});
+
+$(function () {
+    $('.seller-nav .contact-us').click(function (event) {
+        event.preventDefault();
+        var top = $($(this).attr('href')).offset().top - 20;
+        $('html, body').animate({
+            scrollTop: top
+        }, 2000);
+    });
+
+});
+
+$("#incorrect_contacts_reporting").validate({
+	submitHandler: function(form) {
+    var csrf_token  = $('[name="csrfmiddlewaretoken"]').val()
+		post_incorrect_contact_reporting(form, csrf_token);
+  	},
+
+	rules: {
+		fname: "required",
+		email: {
+			required: true,
+			email: true
+		},
+		contact: {
+			required: true,
+			number: true
+		},
+		complaint: "required"
+	},
+	messages: {
+		fname: "Enter the name",
+
+		email: {
+			required: "Enter the email id",
+			email: "Enter valid email id"
+		},
+		contact: {
+			required: "Enter the phone number",
+			number: "Enter valid number"
+		},
+		complaint:"Enter complaint"
+	}
+});
+
+
+function reset_send_inq_popup_close() {
+    setTimeout(function () {
+        $('.form-inside').show();
+        $('#complaint_response').hide()
+    }, 500);
+}
+
+// flag js start
+$.validator.addMethod("intlTelNumber", function(value, element) {
+return this.optional(element) || $(element).intlTelInput("isValidNumber");
+}, "Please enter a valid Number");
+
+// flag start
+var telInput = $("#contact_id"),
+errorMsg = $("#error-msg"),
+validMsg = $("#valid-msg");
+// initialise plugin
+telInput.intlTelInput({
+utilsScript: "https://st.tistatic.com/js/design2019/utils.js",
+separateDialCode:true,
+autoPlaceholder: true,
+autoHideDialCode: false,
+preferredCountries: ['in', 'us', 'gb'],
+hiddenInput: "mobile",
+onSelectFlag:null,
+formatOnDisplay: false,
+hiddenInput: "full_phone",
+customPlaceholder: function(selectedCountryPlaceholder) {
+return "Mobile Number e.g. " + selectedCountryPlaceholder;
+}
+});
