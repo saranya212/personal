@@ -1,24 +1,36 @@
-(function() {
-  if(!!navigator.geolocation) {
-    var map;
-    var mapOptions = {
-      zoom: 15,
-      mapTypeId: google.maps.MapTypeId.ROADMAP
-    };
-    map = new google.maps.Map(document.getElementById('google_canvas'), mapOptions);
+var map, infoWindow;
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: {lat: -34.397, lng: 150.644},
+    zoom: 6
+  });
+  infoWindow = new google.maps.InfoWindow;
+
+  // Try HTML5 geolocation.
+  if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var geolocate = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-      var infowindow = new google.maps.InfoWindow({
-        map: map,
-        position: geolocate,
-        content:
-        '<h1>Local atual</h1>' +
-        '<h2>Latitude: ' + position.coords.latitude + '</h2>' +
-        '<h2>Longitude: ' + position.coords.longitude + '</h2>'
-      });
-      map.setCenter(geolocate);
+      var pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude
+      };
+
+      infoWindow.setPosition(pos);
+      infoWindow.setContent('Location found.');
+      infoWindow.open(map);
+      map.setCenter(pos);
+    }, function() {
+      handleLocationError(true, infoWindow, map.getCenter());
     });
   } else {
-    document.getElementById('google_canvas').innerHTML = 'Não oferece suporte a geolocalização';
+    // Browser doesn't support Geolocation
+    handleLocationError(false, infoWindow, map.getCenter());
   }
-})();
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+  infoWindow.setPosition(pos);
+  infoWindow.setContent(browserHasGeolocation ?
+                        'Error: The Geolocation service failed.' :
+                        'Error: Your browser doesn\'t support geolocation.');
+  infoWindow.open(map);
+}
